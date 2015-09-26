@@ -8,10 +8,10 @@ return [
 
 		'main' => [
 			'driver' => 'mysql',
-			'host' => 'localhost',
-			'database' => 'pugs',
-			'username' => 'root',
-			'password' => '',
+			'host' => getenv('DB_HOSTNAME'),
+			'database' => getenv('DB_DATABASE'),
+			'username' => getenv('DB_USERNAME'),
+			'password' => getenv('DB_PASWORD'),
 			'charset' => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix' => ''
