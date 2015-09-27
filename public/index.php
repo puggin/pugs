@@ -7,9 +7,13 @@ $router = $server->get('League\Route\RouteCollection');
 
 $dispatcher = $router->getDispatcher();
 
-$response = $dispatcher->dispatch(
-	$request->getMethod(),
-	$request->getPathInfo()
-);
+try {
+	$response = $dispatcher->dispatch(
+		$request->getMethod(),
+		$request->getPathInfo()
+	);
+} catch(\League\Route\Http\Exception\NotFoundException $e) {
+	$response = $e->getJsonResponse();
+}
 
 $response->send();
