@@ -41,6 +41,11 @@ class Core
 	 */
 	protected $serviceProviders = [];
 
+	/**
+	 * Indicates if the application has "booted".
+	 *
+	 * @var bool
+	 */
 	protected $booted = false;
 
 	/**
@@ -93,13 +98,13 @@ class Core
 	
 
 	/**
-     * Register a service provider with the application.
-     *
-     * @param  \Pugs\Application\Provider|string  $provider
-     * @param  array  $options
-     * @param  bool   $force
-     * @return \Pugs\Application\Provider
-     */
+	 * Register a service provider with the application.
+	 *
+	 * @param  \Pugs\Application\Provider|string  $provider
+	 * @param  array  $options
+	 * @param  bool   $force
+	 * @return \Pugs\Application\Provider
+	 */
 	public function register($provider, $options = [], $force = false)
 	{
 		if ( $registered = $this->getProvider($provider) && ! $force ) {
