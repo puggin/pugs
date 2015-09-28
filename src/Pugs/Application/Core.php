@@ -75,11 +75,6 @@ class Core
 		}
 	}
 
-	public function call($name, $params)
-	{
-		return $this->container->call($name, $params);
-	}
-
 	public function get($name)
 	{
 		return $this->container->get($name);
