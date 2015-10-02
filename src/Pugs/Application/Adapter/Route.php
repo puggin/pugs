@@ -2,7 +2,7 @@
 
 namespace Pugs\Application\Adapter;
 
-abstract class Route
+class Route
 {
 
 }
