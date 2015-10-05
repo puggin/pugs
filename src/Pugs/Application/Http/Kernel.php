@@ -36,10 +36,10 @@ class Kernel
 		$this->core = $core;
 		$this->route = $route;
 
-		// run the request through every middleware
+		foreach ( $this->middleware as $key => $middleware ) {
+			
+		}
 	}
-
-	// function for gathering middleware for a specific route/request
 
 	/**
 	 * Handles incoming HTTP requuest.
@@ -49,7 +49,7 @@ class Kernel
 	 */
 	public function handle(Request $request)
 	{
-		// round robin through the middleware
+		
 	}
 
 	/**
