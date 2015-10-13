@@ -80,16 +80,16 @@ class Core
 		}
 	}
 
+	/**
+	 * @inheritdocs
+	 */
 	public function get($name)
 	{
 		return $this->container->get($name);
 	}
 
 	/**
-	 * Lazy loads the dependencies
-	 *
-	 * @param string $name
-	 * @param DI\Definition\Helper\ObjectDefinitionHelper $object
+	 * @inheritdocs
 	 */
 	public function set($name, $object)
 	{
