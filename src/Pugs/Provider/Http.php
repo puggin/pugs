@@ -8,6 +8,13 @@ class Http extends Provider
 {
 
 	/**
+	 * The route class to be used by the application
+	 *
+	 * @var string
+	 */
+	protected $routeClass = 'League\Route\RouteCollection';
+
+	/**
 	 * Dependencies to be used
 	 *
 	 * @var array
@@ -18,11 +25,11 @@ class Http extends Provider
 
 	public function register()
 	{
-		$this->core->set('League\Route\RouteCollection', \DI\object('League\Route\RouteCollection')
+		$this->core->set($this->routeClass, \DI\object($this->routeClass)
 			->method('setStrategy', \DI\object('Pugs\Application\Strategy\Puggr')->constructor($this->core))
 		);
 
-		$this->core->set('Symfony\Component\HttpFoundation\Request', \DI\Factory(function ( ){
+		$this->core->set('Symfony\Component\HttpFoundation\Request', \DI\Factory( function () {
 			return \Symfony\Component\HttpFoundation\Request::createFromGlobals();
 		}));
 
