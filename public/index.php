@@ -2,6 +2,7 @@
 
 $server = require_once dirname(dirname(__FILE__)) . '/server.php';
 
+// rewrite everything until only the http kernel is called here
 $request = $server->get('Symfony\Component\HttpFoundation\Request');
 $router = $server->get('League\Route\RouteCollection');
 
