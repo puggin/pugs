@@ -94,7 +94,6 @@ class Auth extends Repository
 			'iss' => $domain,
 			'aud' => $domain,
 			'iat' => time(),
-			'nbf' => time(),
 			'exp' => time ()  + $this->expiration,
 		];
 
