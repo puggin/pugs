@@ -41,34 +41,6 @@ abstract class Provider
 	abstract public function register();
 
 	/**
-	 * Checks if the current service provider has an alias
-	 *
-	 * @return boolean
-	 */
-	public function hasAlias()
-	{
-		if ( empty($this->alias) ) {
-			return false;
-		}
-
-		return true;
-	}
-
-	/**
-	 * Gets the alias of the service provider
-	 *
-	 * @return string|null
-	 */
-	public function getAlias()
-	{
-		if ( empty($this->alias) ) {
-			return null;
-		}
-
-		return $this->alias;
-	}
-
-	/**
 	 * Return list an array of classes that are provided
 	 *
 	 * @return array
