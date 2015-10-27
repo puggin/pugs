@@ -65,8 +65,8 @@ class Core
 	 */
 	protected function buildContainer()
 	{
-		$builder = new ContainerBuilder;
-		$builder->useAnnotations(true);
+		$builder = (new ContainerBuilder)
+			->useAnnotations(true);
 
 		$this->container = $builder->build();
 
