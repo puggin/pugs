@@ -22,6 +22,13 @@ abstract class Provider
 	protected $alias;
 
 	/**
+	 * List of class aliases
+	 *
+	 * @var array
+	 */
+	private $aliases = [];
+
+	/**
 	 * Classes that are provided by the service
 	 *
 	 * @var array
@@ -39,6 +46,36 @@ abstract class Provider
 	}
 
 	/**
+	 * Set an alias for the class
+	 *
+	 * @param string $alias
+	 * @param string $className
+	 *
+	 * @return $this
+	 */
+	public function setAlias($alias = null, $className = null)
+	{
+		$alias = is_null($alias) ? $this->getAlias() : $alias;
+		$className = is_null($className) ? get_class() : $className;
+
+		$this->aliases[$alias] = $className;
+
+		return $this;
+	}
+
+	/**
+	 * Get the alias of the class
+	 *
+	 * @param string $alias
+	 *
+	 * @return string
+	 */
+	public function getAlias($alias)
+	{
+		return $this->alias;
+	}
+
+	/**
 	 * @inheritdocs
 	 */
 	public function get($name)
@@ -48,10 +85,14 @@ abstract class Provider
 
 	/**
 	 * @inheritdocs
+	 *
+	 * @return $this
 	 */
 	public function set($name, $object)
 	{
 		$this->container->set($name, $object);
+
+		return $this;
 	}
 
 	abstract public function register();
