@@ -2,15 +2,12 @@
 
 namespace Pugs\Application\Adapter;
 
-use Pugs\Application\Contract\Route as Contract;
-use League\Route\RouteCollection;
-
-class LeagueRoute implements Contract
+class Route implements \Pugs\Application\Contract\Route
 {
 
 	protected $interface;
 
-	public function __construct(RouteCollection $interface = null)
+	public function __construct($interface = null)
 	{
 		$this->interface = is_null($interface) ? new RouteCollection : $interface;
 	}
@@ -38,26 +35,6 @@ class LeagueRoute implements Contract
 	public function patch($uri, $action)
 	{
 		$this->interface->delete($uri, $action);
-	}
-
-	public function options($uri, $action)
-	{
-
-	}
-
-	public function match($methods, $uri, $action)
-	{
-
-	}
-
-	public function resource($name, $controller, array $options = [])
-	{
-
-	}
-
-	public function group(array $attributes, Closure $callback)
-	{
-
 	}
 
 }
