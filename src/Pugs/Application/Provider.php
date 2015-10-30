@@ -80,7 +80,7 @@ abstract class Provider
 	 */
 	public function get($name)
 	{
-		return $this->container->get($name);
+		return $this->core->container->get($name);
 	}
 
 	/**
@@ -90,7 +90,7 @@ abstract class Provider
 	 */
 	public function set($name, $object)
 	{
-		$this->container->set($name, $object);
+		$this->core->container->set($name, $object);
 
 		return $this;
 	}
