@@ -10,7 +10,7 @@ abstract class Provider
 	/**
 	 * Core application container
 	 *
-	 * @var Core
+	 * @var \Pugs\Application\Core
 	 */
 	protected $core;
 
@@ -38,7 +38,7 @@ abstract class Provider
 	/**
 	 * Class constructor
 	 *
-	 * @param Core $core
+	 * @param \Pugs\Application\Core $core
 	 */
 	public function __construct(Core $core)
 	{
