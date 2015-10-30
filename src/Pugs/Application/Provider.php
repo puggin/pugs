@@ -38,6 +38,22 @@ abstract class Provider
 		$this->core = $core;
 	}
 
+	/**
+	 * @inheritdocs
+	 */
+	public function get($name)
+	{
+		return $this->container->get($name);
+	}
+
+	/**
+	 * @inheritdocs
+	 */
+	public function set($name, $object)
+	{
+		$this->container->set($name, $object);
+	}
+
 	abstract public function register();
 
 	/**
