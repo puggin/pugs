@@ -32,7 +32,7 @@ class Database extends Provider {
 
 	protected function buildDatabase()
 	{
-		$config = $this->core->get('Pugs\Application\Config');
+		$config = $this->get('Pugs\Application\Config');
 		$this->database = new Capsule;
 
 		foreach($config->get('database.connections') as $key => $connection) {

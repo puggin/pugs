@@ -31,11 +31,11 @@ class Config extends Provider {
 	{
 		$this->setupPaths();
 
-		$this->core->set($this->envClass, \DI\object($this->envClass)
+		$this->set($this->envClass, \DI\object($this->envClass)
 			->constructor($this->paths['env_file_path'])
 		);
 
-		$this->core->set($this->configClass, \DI\object($this->configClass)
+		$this->set($this->configClass, \DI\object($this->configClass)
 			->method('loadConfigurationFiles', $this->paths['config_path'], $this->getEnvironment())
 		);
 	}
@@ -58,7 +58,7 @@ class Config extends Provider {
 	 */
 	protected function getEnvironment()
 	{
-		$dotenv = $this->core->get('Dotenv\Dotenv');
+		$dotenv = $this->get('Dotenv\Dotenv');
 
 		if (is_file($this->paths['env_file'])) {
 		   $dotenv->load($this->paths['env_file_path']);

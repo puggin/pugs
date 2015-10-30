@@ -25,11 +25,11 @@ class Http extends Provider
 
 	public function register()
 	{
-		$this->core->set($this->routeClass, \DI\object($this->routeClass)
+		$this->set($this->routeClass, \DI\object($this->routeClass)
 			->method('setStrategy', \DI\object('Pugs\Application\Strategy\Puggr')->constructor($this->core))
 		);
 
-		$this->core->set('Symfony\Component\HttpFoundation\Request', \DI\Factory( function () {
+		$this->set('Symfony\Component\HttpFoundation\Request', \DI\Factory( function () {
 			return \Symfony\Component\HttpFoundation\Request::createFromGlobals();
 		}));
 
@@ -38,8 +38,8 @@ class Http extends Provider
 
 	protected function registerRoutes()
 	{
-		$router = $this->core->get('League\Route\RouteCollection');
-		$config = $this->core->get('Pugs\Application\Config');
+		$router = $this->get('League\Route\RouteCollection');
+		$config = $this->get('Pugs\Application\Config');
 
 		foreach( glob($config->get('paths.routes') . '/*.php' ) as $path ) {
 			require $path;
