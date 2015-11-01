@@ -32,7 +32,7 @@ interface Kernel
 	/**
 	 * Get the Laravel application instance.
 	 *
-	 * @return \Illuminate\Contracts\Foundation\Application
+	 * @return \Pugs\Contracts\Application\Core
 	 */
 	public function getApplication();
 
