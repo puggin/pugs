@@ -69,4 +69,5 @@ class Kernel implements \Pugs\Contract\Http\Kernel
 	{
 
 	}
+
 }
