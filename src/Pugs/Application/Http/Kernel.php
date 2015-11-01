@@ -7,7 +7,7 @@ use Pugs\Application\Adapter\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class Kernel
+class Kernel implements \Pugs\Contract\Http\Kernel
 {
 
 	/**
