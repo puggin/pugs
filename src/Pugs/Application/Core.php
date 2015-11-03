@@ -140,8 +140,8 @@ class Core
 	/**
 	 * Get the registered service provider instance if it exists.
 	 *
-	 * @param  \Pug\Application\Provider|string  $provider
-	 * @return \Pug\Application\Provider|null
+	 * @param  \Pugs\Application\Provider|string  $provider
+	 * @return \Pugs\Application\Provider|null
 	 */
 	public function getProvider($provider)
 	{
@@ -156,7 +156,7 @@ class Core
 	 * Resolve a service provider instance from the class name.
 	 *
 	 * @param  string  $provider
-	 * @return \Pug\Application\Provider
+	 * @return \Pugs\Application\Provider
 	 */
 	public function resolveProviderClass($provider)
 	{
@@ -166,7 +166,7 @@ class Core
 	/**
 	 * Mark the given provider as registered.
 	 *
-	 * @param \Pug\Application\Provider
+	 * @param \Pugs\Application\Provider
 	 * @return void
 	 */
 	protected function markAsRegistered($provider)
