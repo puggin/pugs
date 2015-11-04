@@ -3,7 +3,7 @@
 namespace Pugs\Application\Http;
 
 use Pugs\Application\Core;
-use Pugs\Application\Adapter\Route;
+use Pugs\Contract\Routing\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -18,9 +18,9 @@ class Kernel implements \Pugs\Contract\Http\Kernel
 	protected $core;
 
 	/**
-	 * League routing container
+	 * Routing container
 	 *
-	 * @var League\Route\RouteCollection
+	 * @var \Pugs\Contract\Routing\Route
 	 */
 	protected $route;
 
@@ -35,7 +35,7 @@ class Kernel implements \Pugs\Contract\Http\Kernel
 	 * Class constructor
 	 *
 	 * @param \Pugs\Application\Core $core
-	 * @param \Pugs\Application\Adapter\Route $route
+	 * @param \Pugs\Contract\Routing\Route $route
 	 */
 	public function __construct(Core $core, Route $route)
 	{
