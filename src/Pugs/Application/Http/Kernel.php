@@ -29,7 +29,7 @@ class Kernel implements \Pugs\Contract\Http\Kernel
 	 *
 	 * @var array
 	 */
-	protected $middleware;
+	protected $middleware = [];
 
 	/**
 	 * Class constructor
