@@ -1,9 +1,10 @@
 <?php
 
-namespace Pugs\Application\Contract;
+namespace Pugs\Contract\Routing;
 
 interface Route
 {
+
 	/**
 	 * Register a new GET route with the router.
 	 *
@@ -58,32 +59,4 @@ interface Route
 	 */
 	public function options($uri, $action);
 
-	/**
-	 * Register a new route with the given verbs.
-	 *
-	 * @param  array|string  $methods
-	 * @param  string  $uri
-	 * @param  \Closure|array|string  $action
-	 * @return void
-	 */
-	public function match($methods, $uri, $action);
-
-	/**
-	 * Route a resource to a controller.
-	 *
-	 * @param  string  $name
-	 * @param  string  $controller
-	 * @param  array   $options
-	 * @return void
-	 */
-	public function resource($name, $controller, array $options = []);
-
-	/**
-	 * Create a route group with shared attributes.
-	 *
-	 * @param  array     $attributes
-	 * @param  \Closure  $callback
-	 * @return void
-	 */
-	public function group(array $attributes, Closure $callback);
 }
