@@ -7,7 +7,12 @@ use League\Route\RouteCollection;
 class Adapter implements \Pugs\Contract\Routing\Route
 {
 
-	protected $interface;
+	/**
+	 * Routing collection instance container
+	 *
+	 * @var \League\Route\RouteCollection
+	 */
+	protected $instance;
 
 	public function __construct($interface = null)
 	{
