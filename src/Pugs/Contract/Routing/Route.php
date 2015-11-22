@@ -6,13 +6,6 @@ interface Route
 {
 
 	/**
-	 * Routing collection instance container
-	 *
-	 * @var Obj
-	 */
-	protected $instance;
-
-	/**
 	 * Register a new GET route with the router.
 	 *
 	 * @param  string  $uri
