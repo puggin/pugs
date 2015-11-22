@@ -4,7 +4,7 @@ namespace Pugs\LeagueAdapter;
 
 use League\Route\RouteCollection;
 
-class Adapter implements \Pugs\Support\Contract\Route
+class Adapter implements \Pugs\Contract\Routing\Route
 {
 
 	protected $interface;
