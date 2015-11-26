@@ -26,8 +26,7 @@
 		"symfony/finder": "^2.7",
 		"symfony/http-foundation": "~2.7",
 		"symfony/http-kernel": "~2.7",
-		"doctrine/annotations": "^1.2",
-		"respect/validation": "^0.9.3"
+		"doctrine/annotations": "^1.2"
 	},
 
 	"require-dev": {
