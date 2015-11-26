@@ -16,7 +16,7 @@
 	},
 
 	"require": {
-		"php": ">=5.4.0",
+		"php": ">=5.5.9",
 		"php-di/php-di": "^5.1",
 		"league/route": "^1.2",
 		"vlucas/phpdotenv": "^2.0",
