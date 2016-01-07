@@ -4,7 +4,7 @@ namespace Pugs\Entity;
 
 use Pugs\Application\Model;
 
-class Product extends Model
+final class Product extends Model
 {
 	protected $fillable = [
 		'name'
