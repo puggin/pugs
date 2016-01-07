@@ -3,7 +3,6 @@
 namespace Pugs\Application;
 
 use Pugs\Application\Provider;
-use Pugs\Support\Arr;
 use DI\ContainerBuilder;
 
 class Core
@@ -147,9 +146,11 @@ class Core
 	{
 		$name = is_string($provider) ? $provider : get_class($provider);
 
-		return Arr::first($this->serviceProviders, function ($key, $value) use ($name) {
-			return $value instanceof $name;
-		});
+		foreach($this->serviceProviders as $key => $value) {
+			call_user_func_array(function ($key, $value) use ($name) {
+				return $value instanceof $name;
+			}, [$key, $value]);
+		} 
 	}
 
 	/**
