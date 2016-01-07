@@ -101,7 +101,7 @@ class Auth extends Repository
 
 		$this->createAuth([
 			'token' => $token,
-			'expire_at' => $data['exp']
+			'expires_at' => $data['exp']
 		]);
 
 		return $token;
