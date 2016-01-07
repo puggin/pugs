@@ -1,3 +1,11 @@
+CREATE TABLE `users` (
+	`id` int(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	`username` varchar(255) NOT NULL,
+	`nickname` varchar(255) DEFAULT null,
+	`password` varchar(255) NOT NULL,
+	`email` varchar(255) NOT NULL
+) Engine=InnoDB Charset=utf8;
+
 CREATE TABLE `products` (
 	`id` int(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 	`name` varchar(255) NOT NULL,
