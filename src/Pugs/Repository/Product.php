@@ -3,7 +3,7 @@
 namespace Pugs\Repository;
 
 use Pugs\Application\Repository;
-use Pugs\Entity\Product as Model;
+use Pugs\Entity\Product as Entity;
 
 class Product extends Repository
 {
@@ -18,9 +18,9 @@ class Product extends Repository
 	/**
 	 * Class constructor
 	 *
-	 * @param Model $product
+	 * @param Entity $product
 	 */
-	public function __construct(Model $product)
+	public function __construct(Entity $product)
 	{
 		$this->product = $product;
 	}
