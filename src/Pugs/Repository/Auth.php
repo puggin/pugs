@@ -4,7 +4,6 @@ namespace Pugs\Repository;
 
 use Pugs\Application\Config;
 use Pugs\Application\Repository;
-use Pugs\Entity\Auth as Entity;
 use Firebase\JWT\JWT;
 
 class Auth extends Repository
@@ -34,11 +33,13 @@ class Auth extends Repository
 	/**
 	 * Class constructor
 	 *
-	 * @param Entity $auth
+	 * @param \Pugs\Entity\Auth $auth
 	 * @param Config $config
 	 */
-	public function __construct(Entity $auth, Config $config)
-	{
+	public function __construct(
+		\Pugs\Entity\Auth $auth,
+		Config $config
+	) {
 		$this->auth = $auth;
 		$this->config = $config;
 	}
