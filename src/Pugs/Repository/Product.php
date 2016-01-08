@@ -2,9 +2,7 @@
 
 namespace Pugs\Repository;
 
-use Pugs\Application\Repository;
-
-class Product extends Repository
+class Product extends \Pugs\Application\Repository
 {
 
 	/**

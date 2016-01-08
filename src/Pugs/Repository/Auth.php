@@ -3,10 +3,9 @@
 namespace Pugs\Repository;
 
 use Pugs\Application\Config;
-use Pugs\Application\Repository;
 use Firebase\JWT\JWT;
 
-class Auth extends Repository
+class Auth extends \Pugs\Application\Repository
 {
 
 	/**
