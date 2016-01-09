@@ -34,16 +34,14 @@ class Product extends \Pugs\Application\Repository
 	}
 
 	/**
-	 * Get a product by its ID or by Name
+	 * Get a Product model by parameters
 	 *
-	 * @param integer|string $param
+	 * @param array $params
 	 * @return array
 	 */
-	public function getProduct($param)
+	public function getProduct(array $params)
 	{
-		return is_numeric($param) ? 
-			$this->product->where('id', $param)->first():
-			$this->product->where('name', $param)->first();
+		return $this->product->where($params)->first();
 	}
 
 	/**

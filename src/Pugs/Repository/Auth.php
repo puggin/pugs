@@ -119,16 +119,14 @@ class Auth extends \Pugs\Application\Repository
 	}
 
 	/**
-	 * Gets an Auth model by its `id` or `name`
+	 * Gets an Auth model by parameters
 	 *
-	 * @param integer|string
+	 * @param array $params
 	 * @return array
 	 */
-	public function getAuth($param)
+	public function getAuth($params)
 	{
-		return is_numeric($param) ?
-			$this->auth->where('id', $param)->first():
-			$this->auth->where('token', $param)->first();
+		return $this->auth->where($params)->first();
 	}
 
 	/**
