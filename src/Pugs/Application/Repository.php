@@ -16,7 +16,7 @@ abstract class Repository
 	{
 		$fields = array_unique(
 			array_merge($model->getFillable(), $model->getHidden(), $model->getGuarded())
-			);
+		);
 
 		foreach($insertArray as $key => $val)
 		{
