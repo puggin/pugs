@@ -34,6 +34,83 @@ abstract class Repository
 	}
 
 	/**
+	 * Finds an entity by its ID
+	 *
+	 * @param string $id
+	 * @return Object $entity
+	 */
+	public function find($id)
+	{
+		return $this->entity->find($id);
+	}
+
+	/**
+	 * Finds the first entity by the given parameters
+	 *
+	 * @param integer|array $param
+	 * @return Object $entity
+	 */
+	public function first($params)
+	{
+		if ( is_numeric($params) ) {
+			$entity = $this->find($id);
+		}
+
+		if ( is_array($params) ) {
+			$entity = $this->where($params)->first();
+		}
+
+		return $entity;
+	}
+
+	/**
+	 * Gets an entity by parameters
+	 *
+	 * @param array $params
+	 * @return array
+	 */
+	public function get(array $params)
+	{
+		return $this->entity->where($params)->get();
+	}
+
+	/**
+	 * Updates the entity
+	 *
+	 * @param array $data
+	 * @param integer|array $identifier
+	 * @return Object $entity
+	 */
+	public function update(array $data, $identifier)
+	{
+		$entity = $this->first($identifier);
+		$entity = $this->mapInserts($model, $data);
+
+		$entity->save();
+
+		return $entity;
+	}
+
+	/**
+	 * Deletes the entity
+	 *
+	 * @param integer|array $identifier
+	 * @return boolean
+	 */
+	public function delete($identifier)
+	{
+		$entity = $this->first($identifier);
+
+		if ( is_null($entity) ) {
+			return false;
+		}
+
+		$entity->delete();
+
+		return true;
+	}
+
+	/**
 	 * Mass assignment based on fillable, hidden, and guarded attributes
 	 *
 	 * @param object $model
