@@ -75,6 +75,20 @@ abstract class Repository
 	}
 
 	/**
+	 * Creates a new model
+	 *
+	 * @param array $data
+	 * @return Object $entity
+	 */
+	public function create(array $data)
+	{
+		$entity = $this->mapInserts((new $this->entity), $data);
+		$entity->save();
+
+		return $entity;
+	}
+
+	/**
 	 * Updates the entity
 	 *
 	 * @param array $data
