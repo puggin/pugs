@@ -1,9 +1,16 @@
 CREATE TABLE `users` (
 	`id` int(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	`user_group_id` int(11) UNSIGNED DEFAULT 0,
 	`username` varchar(255) NOT NULL,
 	`nickname` varchar(255) DEFAULT null,
 	`password` varchar(255) NOT NULL,
 	`email` varchar(255) NOT NULL
+) Engine=InnoDB Charset=utf8;
+
+CREATE TABLE `user_group` (
+	`id` int(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	`name` varchar(255) NOT NULL,
+	`description` varchar(255) NOT NULL,
 ) Engine=InnoDB Charset=utf8;
 
 CREATE TABLE `products` (
