@@ -131,24 +131,28 @@ abstract class Repository
 	/**
 	 * Mass assignment based on fillable, hidden, and guarded attributes
 	 *
-	 * @param object $model
-	 * @param array $insertArray
+	 * @param array $inserts
+	 * @throws \Pugs\Exception\EntityNotDefined
 	 * @return object
 	 */
-	protected function mapInserts($model, $insertArray)
+	protected function map(array $inserts)
 	{
+		if ( ! is_object($this->entity) ) {
+			throw new \Pugs\Exception\EntityNotDefined;
+		}
+
 		$fields = array_unique(
-			array_merge($model->getFillable(), $model->getHidden(), $model->getGuarded())
+			array_merge($this->entity->getFillable(), $this->entity->getHidden(), $this->entity->getGuarded())
 		);
 
-		foreach($insertArray as $key => $val)
+		foreach($inserts as $key => $val)
 		{
 			if ( in_array($key, $fields) ) {
-				$model->{$key} = $val;
+				$this->entity->{$key} = $val;
 			}
 		}
 
-		return $model;
+		return $this;
 	}
 
 }
