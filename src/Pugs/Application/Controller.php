@@ -43,7 +43,7 @@ abstract class Controller {
 	/**
 	 * Gets the request object
 	 *
-	 * @return Symfony\Component\HttpFoundation\Request
+	 * @return \Symfony\Component\HttpFoundation\Request
 	 */
 	public function getRequest()
 	{
@@ -53,7 +53,7 @@ abstract class Controller {
 	/**
 	 * Gets the response object
 	 *
-	 * @return Symfony\Component\HttpFoundation\Response
+	 * @return \Symfony\Component\HttpFoundation\Response
 	 */
 	public function getResponse()
 	{
