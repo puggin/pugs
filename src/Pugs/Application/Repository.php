@@ -53,15 +53,15 @@ abstract class Repository
 	public function first($params, $value = null)
 	{
 		if ( is_numeric($params) ) {
-			$entity = $this->find($id);
+			$entity = $this->entity->find($id);
 		}
 
 		if ( is_array($params) ) {
-			$entity = $this->where($params)->first();
+			$entity = $this->entity->where($params)->first();
 		}
 
 		if ( is_string($params) ) {
-			$entity = $this->where($params, $value)->first();
+			$entity = $this->entity->where($params, $value)->first();
 		}
 
 		return $entity;
@@ -101,8 +101,8 @@ abstract class Repository
 	 */
 	public function update(array $data, $identifier)
 	{
-		$entity = $this->first($identifier);
-		$entity = $this->mapInserts($model, $data);
+		$entity = $this->entity->first($identifier);
+		$entity = $this->mapInserts($entity, $data);
 
 		$entity->save();
 
@@ -117,7 +117,7 @@ abstract class Repository
 	 */
 	public function delete($identifier)
 	{
-		$entity = $this->first($identifier);
+		$entity = $this->entity->first($identifier);
 
 		if ( is_null($entity) ) {
 			return false;
