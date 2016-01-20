@@ -47,10 +47,10 @@ abstract class Repository
 	/**
 	 * Finds the first entity by the given parameters
 	 *
-	 * @param integer|array $param
+	 * @param integer|array|string $param
 	 * @return Object $entity
 	 */
-	public function first($params)
+	public function first($params, $value = null)
 	{
 		if ( is_numeric($params) ) {
 			$entity = $this->find($id);
@@ -58,6 +58,10 @@ abstract class Repository
 
 		if ( is_array($params) ) {
 			$entity = $this->where($params)->first();
+		}
+
+		if ( is_string($params) ) {
+			$entity = $this->where($params, $value)->first();
 		}
 
 		return $entity;
