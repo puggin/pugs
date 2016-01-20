@@ -28,7 +28,7 @@ CREATE TABLE `users` (
 	INDEX (user_group_id)
 ) Engine=InnoDB Charset=utf8;
 
-CREATE TABLE `user_group` (
+CREATE TABLE `user_groups` (
 	`id` int(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 	`name` varchar(255) NOT NULL,
 	`description` varchar(255) NOT NULL,
