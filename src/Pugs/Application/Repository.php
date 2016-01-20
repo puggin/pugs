@@ -86,10 +86,9 @@ abstract class Repository
 	 */
 	public function create(array $data)
 	{
-		$entity = $this->mapInserts((new $this->entity), $data);
-		$entity->save();
+		$this->entity = $this->map($data, (new $this->entity))->save();
 
-		return $entity;
+		return $this->entity;
 	}
 
 	/**
@@ -101,12 +100,10 @@ abstract class Repository
 	 */
 	public function update(array $data, $identifier)
 	{
-		$entity = $this->entity->first($identifier);
-		$entity = $this->mapInserts($entity, $data);
+		$this->entity = $this->entity->first($identifier);
+		$this->entity = $this->map($data)->save();
 
-		$entity->save();
-
-		return $entity;
+		return $this->entity;
 	}
 
 	/**
@@ -135,8 +132,10 @@ abstract class Repository
 	 * @throws \Pugs\Exception\EntityNotDefined
 	 * @return object
 	 */
-	protected function map(array $inserts)
+	protected function map(array $inserts, $entity = null)
 	{
+		$this->entity = ! is_null($entity) ? $this->entity : $entity;
+
 		if ( ! is_object($this->entity) ) {
 			throw new \Pugs\Exception\EntityNotDefined;
 		}
@@ -152,7 +151,7 @@ abstract class Repository
 			}
 		}
 
-		return $this;
+		return $this->entity;
 	}
 
 }
