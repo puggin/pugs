@@ -56,7 +56,7 @@ CREATE TABLE `products` (
 
 CREATE TABLE `auths` (
 	`id` int(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-	`user_id` int(11) UNSIGNED DEFAULT 0,
+	`identifying_id` int(11) UNSIGNED DEFAULT 0, # oper_id -or- user_id
 	`token` text,
 	`created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
 	`expires_at` datetime DEFAULT null,
