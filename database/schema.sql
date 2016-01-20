@@ -7,6 +7,9 @@ CREATE TABLE `opers` (
 	`last_name` varchar(255) NOT NULL,
 	`password` varchar(255) NOT NULL,
 	`email` varchar(255) NOT NULL,
+	`created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` datetime DEFAULT null,
+	`deleted_at` datetime DEFAULT null,
 
 	INDEX (oper_group_id)
 ) Engine=InnoDB Charset=utf8;
@@ -15,6 +18,9 @@ CREATE TABLE `oper_groups` (
 	`id` int(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 	`name` varchar(255) NOT NULL,
 	`description` varchar(255) NOT NULL,
+	`created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` datetime DEFAULT null,
+	`deleted_at` datetime DEFAULT null
 ) Engine=InnoDB Charset=utf8;
 
 CREATE TABLE `users` (
@@ -24,6 +30,9 @@ CREATE TABLE `users` (
 	`nickname` varchar(255) DEFAULT null,
 	`password` varchar(255) NOT NULL,
 	`email` varchar(255) NOT NULL,
+	`created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` datetime DEFAULT null,
+	`deleted_at` datetime DEFAULT null,
 
 	INDEX (user_group_id)
 ) Engine=InnoDB Charset=utf8;
@@ -32,6 +41,9 @@ CREATE TABLE `user_groups` (
 	`id` int(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 	`name` varchar(255) NOT NULL,
 	`description` varchar(255) NOT NULL,
+	`created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` datetime DEFAULT null,
+	`deleted_at` datetime DEFAULT null
 ) Engine=InnoDB Charset=utf8;
 
 CREATE TABLE `products` (
