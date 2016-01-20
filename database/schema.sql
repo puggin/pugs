@@ -25,9 +25,12 @@ CREATE TABLE `products` (
 
 CREATE TABLE `auths` (
 	`id` int(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	`user_id` int(11) UNSIGNED DEFAULT 0,
 	`token` text,
 	`created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
 	`expires_at` datetime DEFAULT null,
 	`updated_at` datetime DEFAULT null,
-	`deleted_at` datetime DEFAULT null
+	`deleted_at` datetime DEFAULT null,
+
+	INDEX (user_id)
 ) Engine=InnoDB Charset=utf8;
