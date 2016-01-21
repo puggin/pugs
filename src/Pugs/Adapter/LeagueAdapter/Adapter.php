@@ -14,34 +14,34 @@ class Adapter implements \Pugs\Contract\Routing\Route
 	 */
 	protected $instance;
 
-	public function __construct($instace = null)
+	public function __construct($instance = null)
 	{
-		$this->instace = is_null($instace) ? new RouteCollection : $instace;
+		$this->instance = is_null($instance) ? new RouteCollection : $instance;
 	}
 
 	public function get($uri, $action)
 	{
-		$this->instace->get($uri, $action);
+		$this->instance->get($uri, $action);
 	}
 
 	public function post($uri, $action)
 	{
-		$this->instace->post($uri, $action);
+		$this->instance->post($uri, $action);
 	}
 
 	public function put($uri, $action)
 	{
-		$this->instace->put($uri, $action);
+		$this->instance->put($uri, $action);
 	}
 
 	public function delete($uri, $action)
 	{
-		$this->instace->delete($uri, $action);
+		$this->instance->delete($uri, $action);
 	}
 
 	public function patch($uri, $action)
 	{
-		$this->instace->delete($uri, $action);
+		$this->instance->delete($uri, $action);
 	}
 
 }
