@@ -1,6 +1,6 @@
 <?php
 
-namespace Pugs\LeagueAdapter;
+namespace Pugs\Adapter\LeagueAdapter;
 
 use League\Route\RouteCollection;
 
