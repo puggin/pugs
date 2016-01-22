@@ -22,7 +22,7 @@ class Provider
 
 	protected function registerRoutes()
 	{
-		$router = $this->core->get('League\Route\RouteCollection');
+		$router = $this->core->get('Pugs\Contract\Routing\Route');
 		$config = $this->core->get('Pugs\Application\Config');
 
 		foreach( glob($config->get('paths.routes') . '/*.php' ) as $path ) {
