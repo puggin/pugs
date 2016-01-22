@@ -2,22 +2,29 @@
 
 namespace Pugs\Http\Middleware;
 
-use Pugs\Repository\Auth as Repository;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\HttpKernelInterface;
 use League\Route\Http\Exception\UnauthorizedException;
 
-class AuthBearer implements HttpKernelInterface
+class AuthBearer implements \Symfony\Component\HttpKernel\HttpKernelInterface
 {
 
+	/**
+	 * Auth Repository container
+	 * 
+	 * @var \Pugs\Repository\Auth
+	 */
 	protected $auth;
 
-	public function __construct(Repository $auth)
+	/**
+	 * Class constructor
+	 *
+	 * @param \Pugs\Repository\Auth $auth
+	 */
+	public function __construct(\Pugs\Repository\Auth $auth)
 	{
 		$this->auth = $auth;
 	}
 
-	public function handle(Request $request, $type = self::MASTER_REQUEST, $catch = true)
+	public function handle(\Symfony\Component\HttpFoundation\Request $request, $type = self::MASTER_REQUEST, $catch = true)
 	{
 		if ( ! $request->headers->has('Authorization') ) {
 			$exception = new UnauthorizedException("No token provided.");
