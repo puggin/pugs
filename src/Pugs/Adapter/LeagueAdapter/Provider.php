@@ -8,7 +8,7 @@ class Provider
 	public function register()
 	{
 		$this->core->set('Pugs\Contract\Routing\Route', \DI\Object('League\Route\RouteCollection')
-			->method('setStrategy', \DI\object('Pugs\Support\Strategy\Puggr')
+			->method('setStrategy', \DI\object(__NAMESPACE__ . '\\Strategy')
 				->constructor($this->core)
 			)
 		);
