@@ -2,7 +2,7 @@
 
 namespace Pugs\Adapter\LeagueAdapter;
 
-class Provider
+class Provider extends \Pugs\Application\Provider
 {
 
 	public function register()
