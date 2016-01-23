@@ -13,11 +13,14 @@ CREATE TABLE `users` (
 
 CREATE TABLE `user_groups` (
 	`id` int(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-	`name` varchar(255) NOT NULL,
-	`description` varchar(255) NOT NULL,
+	`user_id` int(11) UNSIGNED DEFAULT 0,
+	`user_group_id` int(11) UNSIGNED DEFAULT 0,
 	`created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
 	`updated_at` datetime DEFAULT null,
-	`deleted_at` datetime DEFAULT null
+	`deleted_at` datetime DEFAULT null,
+
+	INDEX (user_id),
+	INDEX (user_group_id)
 ) Engine=InnoDB Charset=utf8;
 
 CREATE TABLE `groups` (
