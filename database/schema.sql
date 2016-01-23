@@ -8,9 +8,7 @@ CREATE TABLE `users` (
 	`email` varchar(255) NOT NULL,
 	`created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
 	`updated_at` datetime DEFAULT null,
-	`deleted_at` datetime DEFAULT null,
-
-	INDEX (user_group_id)
+	`deleted_at` datetime DEFAULT null
 ) Engine=InnoDB Charset=utf8;
 
 CREATE TABLE `user_groups` (
