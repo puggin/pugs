@@ -1,6 +1,5 @@
 CREATE TABLE `users` (
 	`id` int(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-	`user_group_id` int(11) UNSIGNED DEFAULT 0 NOT NULL,
 	`username` varchar(255) NOT NULL,
 	`nickname` varchar(255) DEFAULT null,
 	`password` varchar(255) NOT NULL,
