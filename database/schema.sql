@@ -52,7 +52,7 @@ CREATE TABLE `streams` (
 	`updated_at` datetime DEFAULT null,
 	`deleted_at` datetime DEFAULT null,
 
-	INDEX (user_id)
+	INDEX (user_id),
 	INDEX (product_id)
 ) Engine=InnoDB Charset=utf8;
 
