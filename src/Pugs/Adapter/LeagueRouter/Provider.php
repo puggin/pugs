@@ -1,6 +1,6 @@
 <?php
 
-namespace Pugs\Adapter\LeagueAdapter;
+namespace Pugs\Adapter\LeagueRouter;
 
 class Provider extends \Pugs\Application\Provider
 {
