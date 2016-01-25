@@ -40,6 +40,22 @@ CREATE TABLE `products` (
 	`deleted_at` datetime DEFAULT null
 ) Engine=InnoDB Charset=utf8;
 
+CREATE TABLE `stream` (
+	`id` int(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	`user_id` int(11) UNSIGNED DEFAULT 0,
+	`product_id` int(11) UNSIGNED DEFAULT 0,
+	`points` int(11) UNSIGNED DEFAULT 0,
+	`subject` varchar(255) NOT NULL DEFAULT '(No Title)',
+	`content` text NOT NULL,
+
+	`created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` datetime DEFAULT null,
+	`deleted_at` datetime DEFAULT null,
+
+	INDEX (user_id)
+	INDEX (product_id)
+) Engine=InnoDB Charset=utf8;
+
 CREATE TABLE `auths` (
 	`id` int(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 	`identifying_id` int(11) UNSIGNED DEFAULT 0, # oper_id -or- user_id
