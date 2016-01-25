@@ -56,6 +56,23 @@ CREATE TABLE `streams` (
 	INDEX (product_id)
 ) Engine=InnoDB Charset=utf8;
 
+CREATE TABLE `stream_comments` (
+	`id` int(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	`user_id` int(11) UNSIGNED DEFAULT 0,
+	`product_id` int(11) UNSIGNED DEFAULT 0,
+	`parent_id` int(11) UNSIGNED DEFAULT 0,
+	`points` int(11) UNSIGNED DEFAULT 0,
+	`content` text NOT NULL,
+
+	`created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` datetime DEFAULT null,
+	`deleted_at` datetime DEFAULT null,
+
+	INDEX (user_id),
+	INDEX (product_id),
+	INDEX (parent_id)
+) Engine=InnoDB Charset=utf8;
+
 CREATE TABLE `auths` (
 	`id` int(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 	`identifying_id` int(11) UNSIGNED DEFAULT 0, # oper_id -or- user_id
