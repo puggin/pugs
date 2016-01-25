@@ -4,6 +4,10 @@ namespace Pugs\Entity;
 
 final class UserGroup extends \Pugs\Application\Model
 {
+	protected $fillable = [
+		'user_id', 'user_group_id'
+	];
+
 	/**
 	 * Retrieve User information
 	 *
