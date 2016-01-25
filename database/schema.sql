@@ -40,7 +40,7 @@ CREATE TABLE `products` (
 	`deleted_at` datetime DEFAULT null
 ) Engine=InnoDB Charset=utf8;
 
-CREATE TABLE `stream` (
+CREATE TABLE `streams` (
 	`id` int(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 	`user_id` int(11) UNSIGNED DEFAULT 0,
 	`product_id` int(11) UNSIGNED DEFAULT 0,
