@@ -2,8 +2,6 @@
 
 namespace Pugs\Provider;
 
-use Illuminate\Database\Capsule\Manager as Capsule;
-
 class Database extends \Pugs\Application\Provider {
 
 	/**
@@ -32,7 +30,7 @@ class Database extends \Pugs\Application\Provider {
 	protected function buildDatabase()
 	{
 		$config = $this->get('Pugs\Application\Config');
-		$this->database = new Capsule;
+		$this->database = new \Illuminate\Database\Capsule\Manager;
 
 		foreach($config->get('database.connections') as $key => $connection) {
 			$connectionName = $config->get('database.default') === $key ? 'default' : $key;
