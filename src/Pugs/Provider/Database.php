@@ -2,10 +2,9 @@
 
 namespace Pugs\Provider;
 
-use Pugs\Application\Provider;
 use Illuminate\Database\Capsule\Manager as Capsule;
 
-class Database extends Provider {
+class Database extends \Pugs\Application\Provider {
 
 	/**
 	 * Dependencies to be used

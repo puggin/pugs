@@ -2,9 +2,7 @@
 
 namespace Pugs\Provider;
 
-use Pugs\Application\Provider;
-
-class Config extends Provider {
+class Config extends \Pugs\Application\Provider {
 
 	/**
 	 * Paths container

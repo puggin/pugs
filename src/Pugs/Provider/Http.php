@@ -2,9 +2,7 @@
 
 namespace Pugs\Provider;
 
-use Pugs\Application\Provider;
-
-class Http extends Provider
+class Http extends \Pugs\Application\Provider
 {
 
 	/**
