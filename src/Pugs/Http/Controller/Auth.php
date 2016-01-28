@@ -6,6 +6,11 @@ use League\Route\Http\JsonResponse\Ok;
 
 class Auth extends \Pugs\Application\Controller {
 
+	/**
+	 * Auth repository container
+	 *
+	 * @var \Pugs\Repository\Auth
+	 */
 	protected $auth;
 
 	public function __construct(\Pugs\Repository\Auth $auth)
