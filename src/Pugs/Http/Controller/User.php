@@ -23,9 +23,11 @@ class User extends \Pugs\Application\Controller
 	/**
 	 * Class constructor
 	 *
+	 * @param \Pugs\Repository\User $user
 	 */
-	public function __construct()
-	{
-
+	public function __construct(
+		\Pugs\Repository\User $user
+	) {
+		$this->user = $user;
 	}
 }
