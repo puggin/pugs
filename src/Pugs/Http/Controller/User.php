@@ -5,6 +5,13 @@ namespace Pugs\Http\Controller;
 class User extends \Pugs\Application\Controller
 {
 	/**
+	 * User repository container
+	 *
+	 * @var \Pugs\Repository\User
+	 */
+	protected $user;
+	
+	/**
 	 * Controller middleware
 	 *
 	 * @var array
