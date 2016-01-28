@@ -2,11 +2,10 @@
 
 namespace Pugs\Http\Controller;
 
-use Pugs\Application\Controller;
 use Pugs\Repository\Auth as Repository;
 use League\Route\Http\JsonResponse\Ok;
 
-class Auth extends Controller {
+class Auth extends \Pugs\Application\Controller {
 
 	protected $auth;
 
