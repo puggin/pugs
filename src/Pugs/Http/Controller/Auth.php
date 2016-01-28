@@ -2,14 +2,13 @@
 
 namespace Pugs\Http\Controller;
 
-use Pugs\Repository\Auth as Repository;
 use League\Route\Http\JsonResponse\Ok;
 
 class Auth extends \Pugs\Application\Controller {
 
 	protected $auth;
 
-	public function __construct(Repository $auth)
+	public function __construct(\Pugs\Repository\Auth $auth)
 	{
 		$this->auth = $auth;
 	}
