@@ -2,10 +2,9 @@
 
 namespace Pugs\Http\Controller;
 
-use Pugs\Application\Controller;
 use League\Route\Http\JsonResponse\Ok;
 
-class Test extends Controller
+class Test extends \Pugs\Application\Controller
 {
 
 	public function getIndex()
