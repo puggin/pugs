@@ -2,7 +2,6 @@
 
 namespace Pugs\Http\Controller;
 
-use Pugs\Repository\Product as Repository;
 use League\Route\Http\JsonResponse\Ok;
 use League\Route\Http\JsonResponse\Created;
 
@@ -29,7 +28,7 @@ class Product extends \Pugs\Application\Controller {
 	 *
 	 * @param Repository $product
 	 */
-	public function __construct(Repository $product)
+	public function __construct(\Pugs\Repository\Product $product)
 	{
 		$this->product = $product;
 	}
