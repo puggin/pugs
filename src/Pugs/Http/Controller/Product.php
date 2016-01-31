@@ -2,12 +2,11 @@
 
 namespace Pugs\Http\Controller;
 
-use Pugs\Application\Controller;
 use Pugs\Repository\Product as Repository;
 use League\Route\Http\JsonResponse\Ok;
 use League\Route\Http\JsonResponse\Created;
 
-class Product extends Controller {
+class Product extends \Pugs\Application\Controller {
 
 	/**
 	 * Controller middleware
