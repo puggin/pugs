@@ -42,9 +42,9 @@ class Product extends \Pugs\Application\Controller {
 	{
 		$request = $this->getRequest();
 
-		$product = $this->product->getProduct($request->get('name'));
+		$product = $this->product->getProduct(['name' => $request->get('name')]);
 		
-		return new Ok($product->toArray());
+		return new Ok($product);
 	}
 
 	/**
