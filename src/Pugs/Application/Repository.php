@@ -134,7 +134,7 @@ abstract class Repository
 	 */
 	protected function map(array $inserts, $entity = null)
 	{
-		$this->entity = ! is_null($entity) ? $this->entity : $entity;
+		$this->entity = ! is_null($entity) ? $entity : $this->entity;
 
 		if ( ! is_object($this->entity) ) {
 			throw new \Pugs\Exception\EntityNotDefined;
