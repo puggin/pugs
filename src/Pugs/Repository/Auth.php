@@ -41,6 +41,8 @@ class Auth extends \Pugs\Application\Repository
 	) {
 		$this->auth = $auth;
 		$this->config = $config;
+
+		$this->setEntity($this->auth);
 	}
 
 	/**
@@ -74,7 +76,7 @@ class Auth extends \Pugs\Application\Repository
 	 */
 	public function createAuth($data)
 	{
-		$auth = $this->mapInserts($this->auth, $data);
+		$auth = $this->map($data);
 		
 		$auth->save();
 
