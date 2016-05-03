@@ -18,7 +18,7 @@
 	"require": {
 		"php": ">=5.5.9",
 		"php-di/php-di": "^5.1",
-		"league/route": "^1.2",
+		"phroute/phroute": "^2.1",
 		"vlucas/phpdotenv": "^2.0",
 		"firebase/php-jwt": "^3.0",
 		"illuminate/database": "^5.2",
