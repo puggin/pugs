@@ -10,7 +10,7 @@ class Http extends \Pugs\Application\Provider
 	 *
 	 * @var string
 	 */
-	protected $routeClass = 'League\Route\RouteCollection';
+	protected $routeClass = 'Phroute\Phroute\RouteCollector';
 
 	/**
 	 * Dependencies to be used
@@ -23,9 +23,7 @@ class Http extends \Pugs\Application\Provider
 
 	public function register()
 	{
-		$this->set($this->routeClass, \DI\object($this->routeClass)
-			->method('setStrategy', \DI\object('Pugs\Application\Strategy\Puggr')->constructor($this->core))
-		);
+		$this->set($this->routeClass, \DI\object($this->routeClass));
 
 		$this->set('Symfony\Component\HttpFoundation\Request', \DI\Factory( function () {
 			return \Symfony\Component\HttpFoundation\Request::createFromGlobals();
@@ -36,7 +34,7 @@ class Http extends \Pugs\Application\Provider
 
 	protected function registerRoutes()
 	{
-		$router = $this->get('League\Route\RouteCollection');
+		$router = $this->get($this->routeClass);
 		$config = $this->get('Pugs\Application\Config');
 
 		foreach( glob($config->get('paths.routes') . '/*.php' ) as $path ) {
