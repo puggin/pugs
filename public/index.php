@@ -1,20 +1,8 @@
 <?php
 
 $server = require_once dirname(dirname(__FILE__)) . '/server.php';
+$router = $server->get('Phroute\Phroute\RouteCollector');
+$dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
 
-// rewrite everything until only the http kernel is called here
-$request = $server->get('Symfony\Component\HttpFoundation\Request');
-$router = $server->get('League\Route\RouteCollection');
-
-$dispatcher = $router->getDispatcher();
-
-try {
-	$response = $dispatcher->dispatch(
-		$request->getMethod(),
-		$request->getPathInfo()
-	);
-} catch(\League\Route\Http\Exception\NotFoundException $e) {
-	$response = $e->getJsonResponse();
-}
-
+$response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 $response->send();
