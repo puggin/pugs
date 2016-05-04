@@ -1,9 +1,9 @@
 <?php
 
-$router->addRoute('GET', '/product', 'Product::getProduct');
+$router->get('/product', ['Pugs\Http\Controller\Product', 'getProduct']);
 
-$router->addRoute('POST', '/product', 'Product::postProduct');
+$router->post('/product', ['Pugs\Http\Controller\Product', 'postProduct']);
 
-$router->addRoute('PUT', '/product', 'Product::putProduct');
+$router->put('/product', ['Pugs\Http\Controller\Product', 'putProduct']);
 
-$router->addRoute('DELETE', '/product', 'Product::deleteProduct');
+$router->delete('/product', ['Pugs\Http\Controller\Product', 'deleteProduct']);
