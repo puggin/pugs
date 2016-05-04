@@ -1,3 +1,3 @@
 <?php
 
-$router->addRoute('GET', '/', 'Test::getIndex');
+$router->get('/', ['Pugs\Http\Controller\Test', 'getIndex']);
