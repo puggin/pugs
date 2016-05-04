@@ -1,3 +1,3 @@
 <?php
 
-$router->addRoute('GET', '/auth', 'Auth::getAuth');
+$router->get('/auth', ['Pugs\Http\Controller\Auth', 'getAuth']);
